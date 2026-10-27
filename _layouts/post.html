@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="article">
+  <header>
+    <p class="meta">{{ page.date | date: '%Y年%-m月%-d日' }} · 最終更新 {{ page.last_modified_at | default: page.date | date: '%Y年%-m月%-d日' }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    <div class="badges"><span>執筆: {{ page.author }}</span><span>医療監修: {% if page.medical_review %}確認済み{% else %}未実施{% endif %}</span></div>
+  </header>
+  <div class="medical-warning"><strong>重要:</strong> 本文は医療教育目的です。症状がある場合は医療機関へ相談してください。</div>
+  {% include toc.html html=content %}
+  <div class="prose">{{ content }}</div>
+  {% include ad-slot.html %}
+  <footer class="article-footer">
+    <p><strong>参考文献の確認:</strong> 医学情報は更新されます。本文末の公的ガイドライン・原著等を確認してください。</p>
+    {% if page.tags %}<p>タグ: {{ page.tags | join: ' / ' }}</p>{% endif %}
+  </footer>
+</article>

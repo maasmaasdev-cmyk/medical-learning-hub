@@ -1,0 +1,51 @@
+title: "胆膵メディカルラーニング"
+description: "胆膵疾患・内視鏡・看護を、根拠とともに学ぶ医療教育サイト"
+lang: ja-JP
+timezone: Asia/Tokyo
+url: "https://YOUR-USERNAME.github.io"
+baseurl: "/medical-learning-hub"
+author:
+  name: "運営者名"
+  bio: "医療教育に携わる運営者"
+logo: "/assets/images/logo.svg"
+permalink: /articles/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - _queue
+  - vendor
+collections:
+  pages:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "運営者名"
+      medical_review: false
+      image: "/assets/images/default-og.svg"
+      sitemap: true
+  - scope:
+      path: ""
+    values:
+      layout: default
+social:
+  name: "胆膵メディカルラーニング"
+  links: []
+# AdSense承認後のみ ca-pub-XXXXXXXXXXXXXXXX を実値へ変更
+adsense_client: ""
+# Google Search Console取得後のみ設定
+google_site_verification: ""

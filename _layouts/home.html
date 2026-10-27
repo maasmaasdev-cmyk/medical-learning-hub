@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">MEDICAL EDUCATION</p>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+  <p class="notice">本サイトは学習用です。個別の診断・治療の代替ではありません。</p>
+</section>
+<section>
+  <h2>分野から学ぶ</h2>
+  <div class="cards">
+    <a class="card" href="{{ '/categories/#膵疾患' | relative_url }}"><strong>膵疾患</strong><span>急性膵炎・慢性膵炎・膵腫瘍</span></a>
+    <a class="card" href="{{ '/categories/#胆道疾患' | relative_url }}"><strong>胆道疾患</strong><span>胆石・胆嚢炎・胆管炎</span></a>
+    <a class="card" href="{{ '/categories/#内視鏡' | relative_url }}"><strong>内視鏡</strong><span>ERCP・EUSと周術期管理</span></a>
+    <a class="card" href="{{ '/categories/#看護' | relative_url }}"><strong>看護</strong><span>観察項目・患者説明・安全管理</span></a>
+  </div>
+</section>
+<section>
+  <h2>新着記事</h2>
+  <div class="post-list">
+  {% for post in site.posts limit: 12 %}
+    <article><p class="meta">{{ post.date | date: '%Y年%-m月%-d日' }} · {{ post.categories | join: ' / ' }}</p><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | truncate: 120 }}</p></article>
+  {% endfor %}
+  </div>
+</section>
